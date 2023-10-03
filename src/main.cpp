@@ -1,5 +1,6 @@
 #include <Arduino.h>
-#include <M5StickC.h>
+// #include <M5Unified.h>
+#include <M5StickCPlus.h>
 
 void setup() {
   M5.begin();
@@ -7,13 +8,13 @@ void setup() {
 }
 
 void loop() {
-  // Buttonクラスを利用するときには必ずUpdateを呼んで状態を更新する
+  // Wenn Sie die Button-Klasse verwenden, rufen Sie immer Update auf, um den Status zu aktualisieren
   M5.update();
 
   // カーソル初期化
   M5.Lcd.setCursor(0, 0);
 
-  // ホームボタンが現在押されているか？
+  // Ist der Home-Button gerade gedrückt?
   M5.Lcd.print("BtnA.isPressed():");
   M5.Lcd.println( M5.BtnA.isPressed() );
 
